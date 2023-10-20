@@ -1,6 +1,6 @@
 {
   "name": "evepaste-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Javascript library to parse pasted data from EVE Online UI",
   "main": "index.js",
   "author": "thebravyone",
