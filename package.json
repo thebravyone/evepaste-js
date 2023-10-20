@@ -6,6 +6,11 @@
   "author": "thebravyone",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thebravyone/evepaste-js.git"
+  },
+  "homepage": "https://github.com/thebravyone/evepaste-js",
   "files": [
     "index.js"
   ],
