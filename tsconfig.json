@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "Node16",
-    "declaration": false,
+    "declaration": true,
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true

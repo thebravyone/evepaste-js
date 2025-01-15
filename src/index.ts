@@ -1,3 +1,14 @@
+interface Item {
+  type_name: string;
+  quantity?: number;
+  volume?: number;
+}
+
+interface ParsedResult {
+  items: Item[];
+  failed: string[];
+}
+
 export default function evepaste(text_input: string): ParsedResult {
   // Parsers should be ordered from most specific to least specific
   const parsers = [
