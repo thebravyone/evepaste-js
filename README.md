@@ -1,6 +1,14 @@
 # evepaste-js
 
-`evepaste-js` is a Node.js library that parses copied and pasted data from [EVE Online](https://www.eveonline.com/). It was inspired by [evepraisal/evepaste](https://github.com/evepraisal/evepaste), but with a different parsing strategy.
+`evepaste-js` is a Node.js library that parses copied and pasted data from [EVE Online](https://www.eveonline.com/).
+
+It was inspired by [evepraisal/evepaste](https://github.com/evepraisal/evepaste) but uses a different parsing strategy that makes it a bit more flexible.
+
+## Features
+
+- Parses both inventory and contract items
+- Removes BPCs but parses BPOs and Formulas
+- Capable of parsing volume instead of quantity in some scenarios (**beta**)
 
 ## Install
 
@@ -28,7 +36,7 @@ Returns an object containing:
 
 - `items` (Array): An array of parsed items. Each item is an object with the following structure:
 
-  ```json
+  ```ts
   {
     "type_name": "string",
     "quantity"?: "number",
@@ -40,7 +48,7 @@ Returns an object containing:
   - **`quantity`** (number, optional): The quantity of the item.
   - **`volume`** (number, optional): The volume in m³.
 
-  Note: `quantity` and `volume` are optional fields and will only be included if they can be inferred from the input data. **If neither is parsed, the line will be marked as failed**.
+  > Note: `quantity` and `volume` are optional fields and will only be included if they can be inferred from the input data. If neither is parsed, the line will be marked as failed.
 
 - `failed` (Array): An array of strings representing lines that could not be parsed.
 
@@ -54,4 +62,4 @@ The text input to parse, usually copied from EVE Online.
 
 ## Notes
 
-Output names follow Python-style conventions so it can easily integrate with [ESI](https://esi.evetech.net/ui/) or [EveRef](https://docs.everef.net/datasets/).
+Output names follow Python-style conventions, making it easy to integrate with [ESI](https://esi.evetech.net/ui/) or [EveRef](https://docs.everef.net/datasets/).
