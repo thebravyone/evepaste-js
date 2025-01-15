@@ -1,8 +1,9 @@
 {
   "name": "evepaste-js",
   "version": "0.1.1",
-  "description": "A Javascript library to parse pasted data from EVE Online UI",
-  "main": "index.js",
+  "description": "A node.js library for parsing copied and pasted data from EVE Online.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "thebravyone",
   "license": "MIT",
   "type": "module",
@@ -11,13 +12,32 @@
     "url": "https://github.com/thebravyone/evepaste-js.git"
   },
   "homepage": "https://github.com/thebravyone/evepaste-js",
+  "keywords": [
+    "eve online",
+    "parser",
+    "paste",
+    "node.js",
+    "typescript"
+  ],
   "files": [
-    "index.js"
+    "dist",
+    "README.md"
   ],
   "scripts": {
+    "build": "tsc",
     "test": "ava"
   },
   "devDependencies": {
-    "ava": "^5.3.1"
+    "@ava/typescript": "^5.0.0",
+    "ava": "^6.2.0",
+    "typescript": "^5.7.3"
+  },
+  "ava": {
+    "typescript": {
+      "rewritePaths": {
+        "src/": "build/"
+      },
+      "compile": "tsc"
+    }
   }
 }
